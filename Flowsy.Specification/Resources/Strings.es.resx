@@ -1,0 +1,59 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ValueDoesNotExceedNCharacters" xml:space="preserve">
+        <value>El valor no excede {0} caracteres.</value>
+    </data>
+    <data name="ValueMustNotExceedNCharacters" xml:space="preserve">
+        <value>El valor no debe exceder {0} caracteres.</value>
+    </data>
+    <data name="ValueIsAtLeastNCharactersLong" xml:space="preserve">
+        <value>El valor tiene al menos {0} caracteres de longitud.</value>
+    </data>
+    <data name="ValueMustBeAtLeastNCharactersLong" xml:space="preserve">
+        <value>El valor debe tener al menos {0} caracteres de longitud.</value>
+    </data>
+    <data name="XIsNotAnEmptyValue" xml:space="preserve">
+        <value>'{0}' no es un valor vacío.</value>
+    </data>
+    <data name="TheValueIsEmpty" xml:space="preserve">
+        <value>El valor está vacío.</value>
+    </data>
+    <data name="XIsNotANullValue" xml:space="preserve">
+        <value>'{0}' no es un valor nulo.</value>
+    </data>
+    <data name="TheValueIsNull" xml:space="preserve">
+        <value>El valor es nulo.</value>
+    </data>
+    <data name="ValueDoesNotConsistOnlyOfWhitespaceCharacters" xml:space="preserve">
+        <value>El valor no consiste únicamente de espacios en blanco.</value>
+    </data>
+    <data name="ValueConsistsOnlyOfWhitespaceCharacters" xml:space="preserve">
+        <value>El valor consiste únicamente de espacios en blanco.</value>
+    </data>
+    <data name="BothSpecificationsWereSatisfied" xml:space="preserve">
+        <value>Ambas especificaciones fueron cumplidas.</value>
+    </data>
+    <data name="NoneOfTheSpecificationsWasSatisfied" xml:space="preserve">
+        <value>Ninguna especificación se cumplió.</value>
+    </data>
+    <data name="TheTargetSpecificationWasNotSatisfied" xml:space="preserve">
+        <value>La especificación referenciada no se cumplió.</value>
+    </data>
+    <data name="TheTargetSpecificationWasSatisfied" xml:space="preserve">
+        <value>La especificación referenciada se cumplió.</value>
+    </data>
+    <data name="AtLeastOneOfTheSpecificationsWasSatisfied" xml:space="preserve">
+        <value>Al menos una de las especificaciones se cumplió.</value>
+    </data>
+</root>

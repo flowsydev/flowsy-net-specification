@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ValueDoesNotExceedNCharacters" xml:space="preserve">
+        <value>Value does not exceed {0} characters.</value>
+    </data>
+    <data name="ValueMustNotExceedNCharacters" xml:space="preserve">
+        <value>Value must not exceed {0} characters.</value>
+    </data>
+    <data name="ValueIsAtLeastNCharactersLong" xml:space="preserve">
+        <value>Value is at least {0} characters long.</value>
+    </data>
+    <data name="ValueMustBeAtLeastNCharactersLong" xml:space="preserve">
+        <value>Value must be at least {0} characters long.</value>
+    </data>
+    <data name="XIsNotAnEmptyValue" xml:space="preserve">
+        <value>'{0}' is not an empty value.</value>
+    </data>
+    <data name="TheValueIsEmpty" xml:space="preserve">
+        <value>The value is empty.</value>
+    </data>
+    <data name="XIsNotANullValue" xml:space="preserve">
+        <value>'{0}' is not a null value.</value>
+    </data>
+    <data name="TheValueIsNull" xml:space="preserve">
+        <value>The value is null.</value>
+    </data>
+    <data name="ValueDoesNotConsistOnlyOfWhitespaceCharacters" xml:space="preserve">
+        <value>The value does not consist only of white-space characters.</value>
+    </data>
+    <data name="ValueConsistsOnlyOfWhitespaceCharacters" xml:space="preserve">
+        <value>The value consists only of white-space characters.</value>
+    </data>
+    <data name="BothSpecificationsWereSatisfied" xml:space="preserve">
+        <value>Both specifications were satisfied.</value>
+    </data>
+    <data name="NoneOfTheSpecificationsWasSatisfied" xml:space="preserve">
+        <value>None of the specifications was satisfied.</value>
+    </data>
+    <data name="TheTargetSpecificationWasNotSatisfied" xml:space="preserve">
+        <value>The target specification was not satisfied.</value>
+    </data>
+    <data name="TheTargetSpecificationWasSatisfied" xml:space="preserve">
+        <value>The target specification was satisfied.</value>
+    </data>
+    <data name="AtLeastOneOfTheSpecificationsWasSatisfied" xml:space="preserve">
+        <value>At least one of the specifications was satisfied.</value>
+    </data>
+</root>
