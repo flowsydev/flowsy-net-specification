@@ -38,12 +38,19 @@ Using specifications we can create reusable objects that tell us if our business
 ```csharp
 public class CreditApprovalSpecification : AbstractSpecification<Customer>
 {
+    private readonly decimal _requestedCreditAmount;
+    
+    public CreditApprovalSpecification(decimal requestedCreditAmount)
+    {
+        _requestedCreditAmount = requestedCreditAmount;
+    }
+    
     public override bool IsSatisfiedBy(Customer? candidate)
     {
         if (candidate is null)
             return false;
         
-        return candidate.OutstandingBalance <= candidate.CreditLimit;
+        return candidate.OutstandingBalance + _requestedCreditAmount <= candidate.CreditLimit;
     }
 
     public override SpecificationEvaluation<Customer> Evaluate(Customer? candidate)
@@ -66,13 +73,15 @@ public class Program
     {
         var customers = new List<Customer>();
         // Populate customer list
-        var creditApproval = new CreditApprovalSpecification();
+        const decimal creditAmount = 1000;
+        var creditApproval = new CreditApprovalSpecification(creditAmount);
 
         foreach (var customer in customers)
         {
             var evaluation = creditApproval.Evaluate(customer);
             Console.WriteLine(
-                @"Credit approved for customer {0}? {1} ({2})",
+                @"${0} USD credit approved for customer {1}? {2} ({3})",
+                creditAmount,
                 customer.Name,
                 evaluation.IsSatisfied ? "Yes" : "No",
                 evaluation.Explanation
