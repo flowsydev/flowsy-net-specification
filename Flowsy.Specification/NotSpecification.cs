@@ -20,12 +20,12 @@ public class NotSpecification<TCandidate> : AbstractSpecification<TCandidate>
     
     public override SpecificationEvaluation<TCandidate> Evaluate(TCandidate? candidate)
     {
-        var isSatisfied = IsSatisfiedBy(candidate);
-        
-        var explanation = isSatisfied
-            ? GetSatisfactionMessage(candidate) ?? Resources.Strings.TheTargetSpecificationWasNotSatisfied
-            : GetFailureMessage(candidate) ?? Resources.Strings.TheTargetSpecificationWasSatisfied;
-
-        return new SpecificationEvaluation<TCandidate>(this, candidate, isSatisfied, explanation);
+        var evaluation = _target.Evaluate(candidate);
+        return new SpecificationEvaluation<TCandidate>(
+            this,
+            candidate,
+            !evaluation.IsSatisfied,
+            evaluation.Explanation
+            );
     }
 }

@@ -23,12 +23,12 @@ public class AndSpecification<TCandidate> : AbstractSpecification<TCandidate>
 
     public override SpecificationEvaluation<TCandidate> Evaluate(TCandidate? candidate)
     {
-        var isSatisfied = IsSatisfiedBy(candidate);
+        var leftEvaluation = _left.Evaluate(candidate);
+        var rightEvaluation = _right.Evaluate(candidate);
         
-        var explanation = isSatisfied
-            ? GetSatisfactionMessage(candidate) ?? Resources.Strings.BothSpecificationsWereSatisfied
-            : GetFailureMessage(candidate) ?? Resources.Strings.NoneOfTheSpecificationsWasSatisfied;
-
+        var isSatisfied = leftEvaluation.IsSatisfied && rightEvaluation.IsSatisfied;
+        var explanation = $"{leftEvaluation.Explanation} | {rightEvaluation.Explanation}";
+        
         return new SpecificationEvaluation<TCandidate>(this, candidate, isSatisfied, explanation);
     }
 }
