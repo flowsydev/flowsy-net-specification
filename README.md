@@ -1,10 +1,10 @@
 # Flowsy Specification
 
-## Concepts
-
 The Specification Pattern is a design pattern used to encapsulate business rules or conditions and make them reusable and composable.
 
-## ISpecification Interface
+## ISpecification\<TCandidate> Interface
+Represents a domain specification that may or may not be satisfied by a given candidate.
+
 ```csharp
 public interface ISpecification<TCandidate>
 {
@@ -18,12 +18,25 @@ public interface ISpecification<TCandidate>
 }
 ```
 
-Although you can implement this interface directly, the **AbstractSpecification** class provides
-reusable functionality to simplify the process of creating your own specifications.
+## SpecificationEvaluation\<TCandidate>
+Represents the results of evaluating a given specification.
 
+```csharp
+public class SpecificationEvaluation<TCandidate>
+{
+    public ISpecification<TCandidate> Specification { get; }
+    public TCandidate? Candidate { get; }
+    public bool IsSatisfied { get; }
+    public string Explanation { get; }
+}
+```
 
 ## Example
+Although you can implement the ISpecification\<TCandidate> interface directly, the **AbstractSpecification**
+class provides reusable functionality to simplify the process of creating your own specifications.
+
 In the following example, the Customer entity holds information about a customer's credit limit and their outstanding balance:
+
 ```csharp
 public class Customer
 {
