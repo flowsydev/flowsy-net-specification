@@ -22,7 +22,7 @@ public interface ISpecification<TCandidate>
 Represents the results of evaluating a given specification.
 
 ```csharp
-public class SpecificationEvaluation<TCandidate>
+public class SpecificationEvaluation<TCandidate> : ISpecificationEvaluation
 {
     public ISpecification<TCandidate> Specification { get; }
     public TCandidate? Candidate { get; }

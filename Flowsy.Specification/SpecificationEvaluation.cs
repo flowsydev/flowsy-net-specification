@@ -4,7 +4,7 @@ namespace Flowsy.Specification;
 /// Represents the results of evaluating a given specification.
 /// </summary>
 /// <typeparam name="TCandidate">The type of candidate for the specification.</typeparam>
-public class SpecificationEvaluation<TCandidate> 
+public class SpecificationEvaluation<TCandidate> : ISpecificationEvaluation
 {
     /// <summary>
     /// Creates a new instance of a specification evaluation.
