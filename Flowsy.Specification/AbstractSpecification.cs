@@ -27,8 +27,12 @@ public abstract class AbstractSpecification<TCandidate> : ISpecification<TCandid
         => FailureMessage ?? ResolveFailureMessage?.Invoke(candidate);
     
     public abstract bool IsSatisfiedBy(TCandidate? candidate);
-    public abstract SpecificationEvaluation<TCandidate> Evaluate(TCandidate? candidate);
     
+    public abstract SpecificationEvaluation<TCandidate> Evaluate(TCandidate? candidate);
+
+    public virtual Task<SpecificationEvaluation<TCandidate>> EvaluateAsync(TCandidate? candidate, CancellationToken cancellationToken)
+        => Task.Run(() => Evaluate(candidate), cancellationToken);
+
     public virtual ISpecification<TCandidate> And(ISpecification<TCandidate> other)
         => new AndSpecification<TCandidate>(this, other);
 

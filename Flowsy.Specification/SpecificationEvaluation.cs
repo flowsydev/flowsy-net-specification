@@ -12,18 +12,18 @@ public class SpecificationEvaluation<TCandidate> : ISpecificationEvaluation
     /// <param name="specification">The evaluated specification.</param>
     /// <param name="candidate">The candidate for the specification.</param>
     /// <param name="isSatisfied">A value that indicates the satisfaction or failure of the evaluation.</param>
-    /// <param name="explanation">A message to describe the result of the evaluation.</param>
+    /// <param name="explanations">A collection of messages to describe the result of the evaluation.</param>
     public SpecificationEvaluation(
         ISpecification<TCandidate> specification,
         TCandidate? candidate,
         bool isSatisfied,
-        string explanation
+        params string[] explanations
         )
     {
         Specification = specification;
         Candidate = candidate;
         IsSatisfied = isSatisfied;
-        Explanation = explanation;
+        Explanations = explanations;
     }
 
     /// <summary>
@@ -37,12 +37,22 @@ public class SpecificationEvaluation<TCandidate> : ISpecificationEvaluation
     public TCandidate? Candidate { get; }
     
     /// <summary>
-    /// A value that indicates the satisfaction or failure of the evaluation.
+    /// A value that indicates that the specification was satisfied.
     /// </summary>
     public bool IsSatisfied { get; }
-    
+
     /// <summary>
-    /// A message to describe the result of the evaluation.
+    /// A value that indicates that the specification was not satisfied.
     /// </summary>
-    public string Explanation { get; }
+    public bool IsNotSatisfied => !IsSatisfied;
+
+    /// <summary>
+    /// A single message to describe the result of the evaluation.
+    /// </summary>
+    public virtual string Explanation => string.Join("|", Explanations);
+
+    /// <summary>
+    /// A collection of messages to describe the result of the evaluation.
+    /// </summary>
+    public IEnumerable<string> Explanations { get; }
 }

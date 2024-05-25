@@ -19,6 +19,14 @@ public interface ISpecification<TCandidate>
     /// <param name="candidate">The candidate for the specification.</param>
     /// <returns>An instance of SpecificationEvaluation&lt;TCandidate&gt;.</returns>
     SpecificationEvaluation<TCandidate> Evaluate(TCandidate? candidate);
+
+    /// <summary>
+    /// Asynchronously evaluates the specification on the given candidate.
+    /// </summary>
+    /// <param name="candidate">The candidate for the specification.</param>
+    /// <param name="cancellationToken">The cancellation token for the operation.</param>
+    /// <returns>An instance of SpecificationEvaluation&lt;TCandidate&gt;.</returns>
+    Task<SpecificationEvaluation<TCandidate>> EvaluateAsync(TCandidate? candidate, CancellationToken cancellationToken);
     
     /// <summary>
     /// Allows to evaluate this specification in conjunction with another one using the logical AND operator.   

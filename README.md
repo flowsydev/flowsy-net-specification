@@ -28,6 +28,7 @@ public class SpecificationEvaluation<TCandidate> : ISpecificationEvaluation
     public TCandidate? Candidate { get; }
     public bool IsSatisfied { get; }
     public string Explanation { get; }
+    public IEnumerable<string> Explanations { get; }
 }
 ```
 
